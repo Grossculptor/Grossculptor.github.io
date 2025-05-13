@@ -23,7 +23,8 @@ He has been developing #DATAsculpting since his project "Risky Player" on Sopots
 - [Portfolio](https://datasculptor.mlearning.ai)
 - [Twitter](https://twitter.com/Gross_sculptor)
 - [Instagram](https://www.instagram.com/datasculptor/)
-- [Medium](https://datasculptor.medium.com)
+- [SUBSTACK](https://mlearning.substack.com)
+- [researchgate](https://www.researchgate.net/profile/Dariusz-Gross)
 
 ## 📜 License
 
