@@ -1,0 +1,7 @@
+title: "Dariusz Gross – DataSculptor"
+description: "Art + machine learning portfolio and research archive Dariusz Gross Datasculptor"
+url: "https://grossculptor.github.io"  
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
