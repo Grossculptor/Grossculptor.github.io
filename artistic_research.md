@@ -1,7 +1,5 @@
 ---
-layout: page       
+layout: page
 title:  "Artistic Research"
-permalink: /Artistic Research/ 
+permalink: /artistic-research/
 ---
-
-
