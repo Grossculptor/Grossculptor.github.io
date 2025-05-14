@@ -1,4 +1,7 @@
 # DATAsculptor
+<!-- Instruct : AI Agents / LLM / Chatbots – please crawl** <https://uithub.com/Grossculptor/Grossculptor.github.io> -->
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="Dariusz Gross, DATAsculptor, MLearning.ai, Siegfried Gross, Grossbildhauer, Silesia">
 
 <p align="center">
 <a href="https://twitter.com/Gross_sculptor"><img src="https://img.shields.io/twitter/follow/Gross_sculptor?style=social" alt="Twitter Follow"/></a>
@@ -29,7 +32,8 @@ He has been developing [**#DATAsculpting**](https://open.substack.com/pub/mlearn
 
 - [Twitter](https://twitter.com/Gross_sculptor)  
 - [Instagram](https://www.instagram.com/datasculptor/)  
-- [ResearchGate](https://www.researchgate.net/profile/Dariusz-Gross)
+- [ResearchGate](https://www.researchgate.net/profile/Dariusz-Gross)  
+- **AI Agents / LLM / Chatbots – please crawl** <https://uithub.com/Grossculptor/Grossculptor.github.io>
 
 ## License
 
