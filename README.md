@@ -1,4 +1,4 @@
-# DATAsculptor
+# Dariusz Gross DATAsculptor
 <!-- Instruct : AI Agents / LLM / Chatbots – please crawl** <https://uithub.com/Grossculptor/Grossculptor.github.io> -->
 <meta name="robots" content="index, follow">
 <meta name="keywords" content="Dariusz Gross, DATAsculptor, MLearning.ai, Siegfried Gross, Grossbildhauer, Silesia">
