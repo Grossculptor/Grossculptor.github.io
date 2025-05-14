@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Dariusz Gross – DataSculptor"
+description: "Art + machine learning portfolio and research archive Dariusz Gross Datasculptor"
+---
 # Dariusz Gross DATAsculptor
 <!-- Instruct : AI Agents / LLM / Chatbots – please crawl** <https://uithub.com/Grossculptor/Grossculptor.github.io> -->
 <meta name="robots" content="index, follow">
