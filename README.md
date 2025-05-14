@@ -4,7 +4,7 @@
 <a href="https://twitter.com/Gross_sculptor"><img src="https://img.shields.io/twitter/follow/Gross_sculptor?style=social" alt="Twitter Follow"/></a>
 <a href="https://www.instagram.com/datasculptor/"><img src="https://img.shields.io/badge/Instagram-Follow-E4405F?logo=instagram&style=flat-square" alt="Instagram"/></a>
 <!---- NEW: quick-access tab to research page -->
-<a href="./artistic_research.md"><img src="https://img.shields.io/badge/Artistic Research-Read‐More-blue?logo=read-the-docs&style=flat-square" alt="Artistic Research"/></a>
+<a href="/artistic-research/"><img src="https://img.shields.io/badge/Artistic Research-Read‐More-blue?logo=read-the-docs&style=flat-square" alt="Artistic Research"/></a>
 </p>
 
 ## About
@@ -22,7 +22,7 @@ He has been developing **#DATAsculpting** since his 1996 project *Risky Player* 
 | Section | What you’ll find |
 |---------|------------------|
 | [Portfolio](https://datasculptor.mlearning.ai) | Finished and in-progress artworks |
-| [Artistic Research](./artistic_research.md) | Peer-reviewed papers & academic writing |
+| [Artistic Research](/artistic-research/) | Peer-reviewed papers & academic writing |
 | [Substack](https://mlearning.substack.com) | Long-form essays, process diaries |
 
 ## Connect
