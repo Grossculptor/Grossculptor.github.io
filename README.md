@@ -1,10 +1,8 @@
 # DATAsculptor
 
 <p align="center">
-
-[![Twitter Follow](https://img.shields.io/twitter/follow/Gross_sculptor?style=social)](https://twitter.com/Gross_sculptor)
-[![Instagram](https://img.shields.io/badge/Instagram-Follow-E4405F?logo=instagram&style=flat-square)](https://www.instagram.com/datasculptor/)
-
+<a href="https://twitter.com/Gross_sculptor"><img src="https://img.shields.io/twitter/follow/Gross_sculptor?style=social" alt="Twitter Follow"/></a>
+<a href="https://www.instagram.com/datasculptor/"><img src="https://img.shields.io/badge/Instagram-Follow-E4405F?logo=instagram&style=flat-square" alt="Instagram"/></a>
 </p>
 
 ## About
