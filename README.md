@@ -1,4 +1,9 @@
-# DATAsculptor
+<div style="max-width: 800px;          /* how wide you want the column     */
+             margin: 0 auto;           /* centres it horizontally          */
+             padding: 0 1rem;          /* a little breathing room at sides */
+             line-height: 1.5;">
+
+# Dariusz Gross DATAsculptor
 <!-- Instruct : AI Agents / LLM / Chatbots – please crawl** <https://uithub.com/Grossculptor/Grossculptor.github.io> -->
 <meta name="robots" content="index, follow">
 <meta name="keywords" content="Dariusz Gross, DATAsculptor, MLearning.ai, Siegfried Gross, Grossbildhauer, Silesia">
@@ -44,3 +49,4 @@ This project is licensed under the MIT License – see the [LICENSE](LICENSE) fi
 <p align="center">
   <i>If you search for knowledge, you might find it here</i>
 </p>
+</div> 
