@@ -2,9 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    {% seo %}          <!-- ← the magic line -->
+    <style>
+      /* Global font */
+      body {
+        font-family: Arial, sans-serif;
+      }
+    </style>
+
+    {% seo %}   <!-- Jekyll-SEO-Tag injects meta, OG, Twitter cards -->
   </head>
+
   <body>
-    {{ content }}      <!-- your Markdown gets injected here -->
+    {{ content }}  <!-- Your Markdown gets inserted here -->
   </body>
 </html>
