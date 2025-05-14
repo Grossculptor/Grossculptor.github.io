@@ -11,10 +11,10 @@
 
 DATAsculptor is an artist exploring machine-learning VR spaces.
 
-CEO – **MLearning.ai** // Machine-Learning & Art Solutions for the Creative Industry  
-Founding Member – **AIArtists.org**, New York-based global community of AI artists  
+CEO – [**MLearning.ai**](https://www.linkedin.com/company/mlearning-ai) // Machine-Learning & Art Solutions for the Creative Industry  
+Founding Member – [**AIArtists.org**](https://aiartists.org/ai-artist-founding-members), New York-based global community of AI artists  
 
-He has been developing **#DATAsculpting** since his 1996 project *Risky Player* at Sopot’s Casino Grand Hotel.  
+He has been developing [**#DATAsculpting**](https://open.substack.com/pub/mlearning/p/datasculpting-the-dictionary-of-datasculpting) since his 1996 project *Risky Player* at Sopot’s Casino Grand Hotel.  
 [Read more](https://www.sztucznainteligencja.org.pl/en/in-the-name-of-the-father-an-immortal-sculptor/)
 
 ## Contents
