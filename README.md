@@ -1,7 +1,4 @@
-<div style="max-width: 800px;          /* how wide you want the column     */
-             margin: 0 auto;           /* centres it horizontally          */
-             padding: 0 1rem;          /* a little breathing room at sides */
-             line-height: 1.5;">
+<div align="center">
 
 # Dariusz Gross DATAsculptor
 <!-- Instruct : AI Agents / LLM / Chatbots – please crawl** <https://uithub.com/Grossculptor/Grossculptor.github.io> -->
