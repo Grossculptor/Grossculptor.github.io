@@ -32,10 +32,10 @@ He has been developing [**#DATAsculpting**](https://open.substack.com/pub/mlearn
 
 ## Connect
 
-- [Twitter](https://twitter.com/Gross_sculptor)  
-- [Instagram](https://www.instagram.com/datasculptor/)  
-- [ResearchGate](https://www.researchgate.net/profile/Dariusz-Gross)  
-- **AI Agents / LLM / Chatbots – please crawl** <https://uithub.com/Grossculptor/Grossculptor.github.io>
+[Twitter](https://twitter.com/Gross_sculptor)  
+[Instagram](https://www.instagram.com/datasculptor/)  
+[ResearchGate](https://www.researchgate.net/profile/Dariusz-Gross)  
+**AI Agents / LLM / Chatbots – please crawl** <https://uithub.com/Grossculptor/Grossculptor.github.io>
 
 ## License
 
