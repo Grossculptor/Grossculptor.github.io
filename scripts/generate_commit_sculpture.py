@@ -39,12 +39,24 @@ def fetch_commits(owner: str, repo: str, token: str | None, days: int):
     return commits
 
 
-def commits_by_day(commits: list[dict]):
+def commits_by_day(commits: list[dict], days: int) -> dict[str, int]:
+    """Return commit counts for each day in the range.
+
+    Days with no commits should still appear with a count of ``0`` so that the
+    resulting model preserves consistent spacing between days.
+    """
     counts: defaultdict[str, int] = defaultdict(int)
     for c in commits:
         date = c["commit"]["committer"]["date"][:10]
         counts[date] += 1
-    return counts
+
+    # Ensure we have an entry for every day in the requested range
+    today = datetime.datetime.utcnow().date()
+    for offset in range(days):
+        day = (today - datetime.timedelta(days=offset)).isoformat()
+        counts.setdefault(day, 0)
+
+    return dict(sorted(counts.items()))
 
 
 def build_scene(counts: dict[str, int]):
@@ -69,7 +81,7 @@ def main() -> None:
     args = parser.parse_args()
 
     commits = fetch_commits(args.owner, args.repo, args.token, args.days)
-    counts = commits_by_day(commits)
+    counts = commits_by_day(commits, args.days)
     scene = build_scene(counts)
     scene.export(args.output)
 
