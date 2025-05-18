@@ -16,15 +16,19 @@ on:
         # The push step requires `contents: write` permission.
         # If the default GITHUB_TOKEN lacks this, supply a PAT via
         # `GH_PAGES_WRITE_TOKEN` and rotate it periodically.
-        - uses: actions/checkout@v3
-          with:
-            fetch-depth: 0
-        - name: Set up Python
-          uses: actions/setup-python@v4
-          with:
-            python-version: '3.10'
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install -U pip
+          pip install -r requirements.txt
       - name: Generate model
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
