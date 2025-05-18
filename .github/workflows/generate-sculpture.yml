@@ -1,4 +1,7 @@
 name: Generate Commit Sculpture
+permissions:
+  contents: write
+  pull-requests: write
 
 on:
   push:
