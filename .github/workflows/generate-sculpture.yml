@@ -17,6 +17,8 @@ on:
         # If the default GITHUB_TOKEN lacks this, supply a PAT via
         # `GH_PAGES_WRITE_TOKEN` and rotate it periodically.
         - uses: actions/checkout@v3
+          with:
+            fetch-depth: 0
         - name: Set up Python
           uses: actions/setup-python@v4
           with:
