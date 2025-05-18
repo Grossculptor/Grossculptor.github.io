@@ -8,15 +8,19 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        # Workflow pushes changes back to the repo.
+        # The push step requires `contents: write` permission.
+        # If the default GITHUB_TOKEN lacks this, supply a PAT via
+        # `GH_PAGES_WRITE_TOKEN` and rotate it periodically.
+        - uses: actions/checkout@v3
+        - name: Set up Python
+          uses: actions/setup-python@v4
+          with:
+            python-version: '3.10'
       - name: Install dependencies
         run: pip install requests trimesh
       - name: Generate model
