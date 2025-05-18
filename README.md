@@ -39,6 +39,15 @@ He has been developing [**#DATAsculpting**](https://open.substack.com/pub/mlearn
 
 ---
 
+## Generative Commit Sculpture
+
+This repository includes an experimental script that turns commit history into a
+3D model. The latest build can be viewed in the repository’s [index page](./index.html).
+Run `scripts/generate_commit_sculpture.py` to create `models/commit_sculpture.glb`.
+Integrate it with GitHub Actions to keep the sculpture updated.
+
+---
+
 ## Connect
 
 - [Twitter](https://twitter.com/Gross_sculptor)  
