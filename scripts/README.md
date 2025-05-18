@@ -13,7 +13,7 @@ is one day of activity.
 Install the dependencies with:
 
 ```bash
-pip install requests trimesh
+pip install -r ../requirements.txt
 ```
 
 ## Usage
