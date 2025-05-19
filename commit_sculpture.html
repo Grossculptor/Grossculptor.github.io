@@ -23,9 +23,26 @@
   <p>The model below is generated from the commit history of this repository.</p>
   <model-viewer id="viewer" auto-rotate camera-controls></model-viewer>
   <script>
-    const maxGen = 5; // adjust to the highest generation number available
-    const n = Math.floor(Math.random() * maxGen) + 1;
-    document.getElementById('viewer').src = `models/commit_sculpture_gen${n}.glb`;
+    const maxGenGuess = 10; // upper bound for available generations
+
+    async function findLatestModel(maxGen) {
+      for (let n = maxGen; n >= 1; n--) {
+        const url = `models/commit_sculpture_gen${n}.glb`;
+        try {
+          const resp = await fetch(url, { method: 'HEAD' });
+          if (resp.ok) {
+            return url;
+          }
+        } catch (err) {
+          // ignore fetch errors and continue checking lower generations
+        }
+      }
+      return 'models/commit_sculpture.glb';
+    }
+
+    findLatestModel(maxGenGuess).then(url => {
+      document.getElementById('viewer').src = url;
+    });
   </script>
 </body>
 </html>
