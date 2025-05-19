@@ -17,8 +17,11 @@ Example usage:
 import argparse
 import datetime
 from collections import defaultdict
+import os
 import requests
 import trimesh
+
+from commit_randomizer import randomize_object
 
 
 def fetch_commits(owner: str, repo: str, token: str | None, days: int):
@@ -84,6 +87,12 @@ def main() -> None:
     counts = commits_by_day(commits, args.days)
     scene = build_scene(counts)
     scene.export(args.output)
+
+    random_scene = scene.copy()
+    randomize_object(random_scene)
+    base, ext = os.path.splitext(args.output)
+    random_path = f"{base}_gen1{ext}"
+    random_scene.export(random_path)
 
 
 if __name__ == "__main__":
