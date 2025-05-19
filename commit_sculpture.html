@@ -21,6 +21,11 @@
 <body>
   <h1>Commit Activity Sculpture</h1>
   <p>The model below is generated from the commit history of this repository.</p>
-  <model-viewer src="models/commit_sculpture.glb" auto-rotate camera-controls></model-viewer>
+  <model-viewer id="viewer" auto-rotate camera-controls></model-viewer>
+  <script>
+    const maxGen = 5; // adjust to the highest generation number available
+    const n = Math.floor(Math.random() * maxGen) + 1;
+    document.getElementById('viewer').src = `models/commit_sculpture_gen${n}.glb`;
+  </script>
 </body>
 </html>
