@@ -38,7 +38,7 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add models/commit_sculpture.glb
+          git add models/commit_sculpture*.glb
           git commit -m "Update commit sculpture [skip ci]" || echo "No changes"
           git pull --rebase
           git push
