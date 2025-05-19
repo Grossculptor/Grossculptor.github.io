@@ -42,7 +42,7 @@ He has been developing [**#DATAsculpting**](https://open.substack.com/pub/mlearn
 ## Generative Commit Sculpture
 
 This repository includes an experimental script that turns commit history into a
-3D model. The latest build can be viewed in the repository’s [index page](./index.html).
+3D model. The latest build can be viewed in the repository’s [index page](./commit_sculpture.html).
 Run `scripts/generate_commit_sculpture.py` to create `models/commit_sculpture.glb`.
 Install the Python dependencies with:
 
