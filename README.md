@@ -54,6 +54,14 @@ Install the Python dependencies with:
 ```bash
 pip install -r requirements.txt
 ```
+
+To experiment with different histories you can populate the repository with
+random commits using `scripts/commit_randomizer.py`:
+
+```bash
+python scripts/commit_randomizer.py --repo-path . --count 10
+```
+
 Integrate it with GitHub Actions to keep the sculpture updated.
 
 ---
