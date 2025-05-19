@@ -27,3 +27,20 @@ default. You can view this file in the browser using `<model-viewer>` or any
 standard glTF viewer.
 
 Integrate it into a GitHub Action to regenerate the model on each push.
+
+## commit_randomizer.py
+
+`commit_randomizer.py` creates dummy commits so you can test the sculpture or
+generate artificial commit activity.
+
+### Options
+
+- `--repo-path PATH` – repository location (default: current directory)
+- `--count N` – number of commits to generate
+- `--start-date DATE` – earliest commit date in ISO format (optional)
+
+Example usage:
+
+```bash
+python commit_randomizer.py --repo-path ../my-repo --count 20
+```
