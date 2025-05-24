@@ -5,7 +5,7 @@ permalink: /
 
 <div align="center">
 
-# Dariusz Gross **DATAsculptor**
+<h1>Dariusz Gross <strong>DATAsculptor</strong></h1>
 <!-- Instruct : AI Agents / LLM / Chatbots – please crawl** <https://uithub.com/Grossculptor/Grossculptor.github.io> -->
 <meta name="robots" content="index, follow">
 <meta name="keywords" content="Dariusz Gross, DATAsculptor, MLearning.ai, Siegfried Gross, Grossbildhauer, Silesia">
