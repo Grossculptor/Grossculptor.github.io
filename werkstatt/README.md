@@ -4,7 +4,7 @@
 
 ### Datasculptor's Studio Garden
 
-![july 2004 Datasculptor's studio garden (after)](july-2004.jpeg)
+![july 2004 Datasculptor's studio garden (after)](july-2004.jpg)
 *july 2004 [Datasculptor's](https://datasculptor.mlearning.ai) studio garden (after)*
 
 **Time and Nature are the two [great sculptors](https://rzezba-gross.pl/) of our world.**
