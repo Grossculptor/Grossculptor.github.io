@@ -32,7 +32,7 @@ Reconstruction in 2004 was mainly due to aesthetic reasons. My perspective on ae
 ![october 2021 Datasculptor's studio garden](october-2021.jpg)
 *october 2021 [Datasculptor's](https://datasculptor.mlearning.ai) studio garden*
 
-*Raking sand, meditation. A bridge of grass on water, water as a mirror of the sky, a bridge as a passage to another reality, concrete as a symbol of permanence, a slanted gate as a symbol of changeability, a mirror — infinity.*
+*Raking sand, meditation. A bridge of grass on water, water as a mirror of the sky, a bridge as a passage to another reality, concrete as a symbol of permanence, a slanted gate as a symbol of changeability, a mirror, infinity.*
 
 And all this without looking at the irretrievable change of the whole ecosystem, the roots of the trees connected, birds with nests, insects, and all the life that has created this place for 100 years. As one of the billions of living beings on earth, what right do we have to subordinate everything to ourselves without regard for the environment's good?
 
@@ -42,7 +42,7 @@ And all this without looking at the irretrievable change of the whole ecosystem,
 
 None of us can be sure what will happen to the world in the future. But let's take a conservative approach and assume that there is no all-powerful deity, no miracle cure for the many diseases of the planet, and no way to predict or prevent catastrophes like flooding or drought. Instead, it seems clear that our future is one of the massive population increases, massive migrations from regions affected by [climate change](https://www.linkedin.com/company/mlearning-ai) toward safer areas with sufficient food and water supplies. In other words, this is a future with millions of [climate](https://www.linkedin.com/company/mlearning-ai) refugees, people on the move across continents because their homes have been rendered unlivable.
 
-Time for a paradigm shift in [architecture](https://www.instagram.com/next_top_architects/), aesthetics — yes, but not at the cost of the environment.
+Time for a paradigm shift in [architecture](https://www.instagram.com/next_top_architects/), aesthetics, yes, but not at the cost of the environment.
 
 > **Each material used should be cataloged and available for reuse.**
 
@@ -50,7 +50,7 @@ A repository should be available to all users, like a library or museum, with di
 
 Artificial intelligence will help find the best solutions for each project at hand — what [architecture](https://www.instagram.com/next_top_architects/), materials, and technology to use? Data collection is key to producing these models. All our buildings are changing because the changing aesthetics and technologies will help maintain data integrity across generations.
 
-> This can be done by cataloging buildings through time — concretely showing their lifespan through changes in architecture and aesthetics. All this will allow future generations to **use our databases** to improve upon what we did before them.
+> This can be done by cataloging buildings through time, concretely showing their lifespan through changes in architecture and aesthetics. All this will allow future generations to **use our databases** to improve upon what we did before them.
 
 My garden hasn't changed much since the remodeling. The sand on the lawn is packed and covered with leaves. Yet, the garden is still bustling with life — vines, bushes, birds, and trees — a wonderful place to sit and contemplate the beautiful world around us.
 
