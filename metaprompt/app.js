@@ -15,38 +15,54 @@ function initializeApp() {
 // Navigation System
 function setupNavigation() {
     const sidebarLinks = document.querySelectorAll('.sidebar__link');
+    const navLinks = document.querySelectorAll('.nav__link');
+    const footerLinks = document.querySelectorAll('.footer__links a');
     const sections = document.querySelectorAll('.section');
 
-    sidebarLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetSection = this.getAttribute('data-section');
-            
-            // Update active sidebar link
-            sidebarLinks.forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Show target section
-            sections.forEach(section => {
+    function activateSection(sectionId) {
+        sidebarLinks.forEach(link => {
+            if (link.getAttribute('data-section') === sectionId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+
+        sections.forEach(section => {
+            if (section.id === sectionId) {
+                section.classList.add('active');
+            } else {
                 section.classList.remove('active');
-                if (section.id === targetSection) {
-                    section.classList.add('active');
-                }
-            });
-            
-            // Smooth scroll to top of content
-            document.querySelector('.content').scrollTop = 0;
+            }
+        });
+
+        document.querySelector('.content').scrollTop = 0;
+    }
+
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetSection = this.getAttribute('data-section');
+            activateSection(targetSection);
+            history.replaceState(null, '', `#${targetSection}`);
         });
     });
 
-    // Handle hash navigation on page load
+    const otherLinks = [...navLinks, ...footerLinks];
+    otherLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (!href || !href.startsWith('#')) return;
+            e.preventDefault();
+            const targetSection = href.substring(1);
+            activateSection(targetSection);
+            history.replaceState(null, '', href);
+        });
+    });
+
     const hash = window.location.hash.substring(1);
     if (hash) {
-        const targetLink = document.querySelector(`[data-section="${hash}"]`);
-        if (targetLink) {
-            targetLink.click();
-        }
+        activateSection(hash);
     }
 }
 
