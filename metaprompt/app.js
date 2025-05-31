@@ -648,4 +648,4 @@ document.querySelectorAll('.technique-card, .case-study, .principle-card').forEa
     observer.observe(el);
 });
 
-console.log('🧪 The Prompt Laboratory initialized successfully!');
+console.log('The Prompt Laboratory initialized successfully!');
