@@ -1,1 +1,1 @@
-
+[Master Prompt Engineering in 2025](https://grossculptor.github.io/metaprompt/#overview) — Discover cutting-edge techniques, best practices, and real-world applications from leading AI companies: 6 Core Techniques, 3 Real-World Cases, 4 Model Personalities.
