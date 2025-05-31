@@ -156,6 +156,56 @@ function setupPlayground() {
     const modelSelect = document.getElementById('model-select');
     const analysisOutput = document.getElementById('analysis-output');
 
+    const defaultPrompts = {
+        basic: {
+            claude: "Explain the concept of machine learning to a 10-year-old.",
+            gpt4: "Explain the concept of machine learning to a 10-year-old.",
+            gemini: "Explain the concept of machine learning to a 10-year-old.",
+            llama: "Explain the concept of machine learning to a 10-year-old."
+        },
+        cot: {
+            claude: "Solve this problem step by step: What is 10 + 5?",
+            gpt4: "Solve this problem step by step: What is 10 + 5?",
+            gemini: "Solve this problem step by step: What is 10 + 5?",
+            llama: "Solve this problem step by step: What is 10 + 5?"
+        },
+        'few-shot': {
+            claude: "Classify the following item using the provided examples.",
+            gpt4: "Classify the following item using the provided examples.",
+            gemini: "Classify the following item using the provided examples.",
+            llama: "Classify the following item using the provided examples."
+        },
+        structured: {
+            claude: "<role>Teacher</role>\n<task>Explain a basic concept.</task>",
+            gpt4: "<role>Teacher</role>\n<task>Explain a basic concept.</task>",
+            gemini: "<role>Teacher</role>\n<task>Explain a basic concept.</task>",
+            llama: "<role>Teacher</role>\n<task>Explain a basic concept.</task>"
+        }
+    };
+
+    if (promptInput) {
+        promptInput.readOnly = true;
+    }
+
+    function updatePrompt() {
+        if (!promptInput) return;
+        const tech = techniqueSelect.value;
+        const model = modelSelect.value;
+        const prompt = (defaultPrompts[tech] && defaultPrompts[tech][model]) ||
+            (defaultPrompts.basic && defaultPrompts.basic[model]) ||
+            "Explain the concept of machine learning to a 10-year-old.";
+        promptInput.value = prompt;
+    }
+
+    if (techniqueSelect) {
+        techniqueSelect.addEventListener('change', updatePrompt);
+    }
+    if (modelSelect) {
+        modelSelect.addEventListener('change', updatePrompt);
+    }
+
+    updatePrompt();
+
     if (generateBtn) {
         generateBtn.addEventListener('click', generateResponse);
     }
