@@ -1151,7 +1151,7 @@ select.form-control {
 
 .stat__number {
   display: block;
-  font-size: var(--font-size-3xl);
+  font-size: 48px;
   font-weight: var(--font-weight-bold);
   color: var(--color-orange-secondary);
 }
