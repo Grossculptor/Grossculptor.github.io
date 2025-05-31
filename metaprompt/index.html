@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Prompt Laboratory - 2025 Prompt Engineering Techniques</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="logo">
+                    <h1>🧪 The Prompt Laboratory</h1>
+                </div>
+                <nav class="nav">
+                    <a href="#overview" class="nav__link">Overview</a>
+                    <a href="#playground" class="nav__link">Playground</a>
+                    <a href="#tools" class="nav__link">Tools</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h2>Master Prompt Engineering in 2025</h2>
+                <p>Discover cutting-edge techniques, best practices, and real-world applications from leading AI companies.</p>
+                <div class="hero__stats">
+                    <div class="stat">
+                        <span class="stat__number">6</span>
+                        <span class="stat__label">Core Techniques</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__number">3</span>
+                        <span class="stat__label">Real-World Cases</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__number">4</span>
+                        <span class="stat__label">Model Personalities</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar__nav">
+                <a href="#overview" class="sidebar__link active" data-section="overview">
+                    <span class="sidebar__icon">📊</span>
+                    Overview
+                </a>
+                <a href="#metaprompting" class="sidebar__link" data-section="metaprompting">
+                    <span class="sidebar__icon">🔄</span>
+                    Metaprompting
+                </a>
+                <a href="#structured" class="sidebar__link" data-section="structured">
+                    <span class="sidebar__icon">🏗️</span>
+                    Structured Prompting
+                </a>
+                <a href="#advanced" class="sidebar__link" data-section="advanced">
+                    <span class="sidebar__icon">🧠</span>
+                    Advanced Techniques
+                </a>
+                <a href="#evaluation" class="sidebar__link" data-section="evaluation">
+                    <span class="sidebar__icon">⚖️</span>
+                    Evaluation Systems
+                </a>
+                <a href="#real-world" class="sidebar__link" data-section="real-world">
+                    <span class="sidebar__icon">🌍</span>
+                    Real-World Cases
+                </a>
+                <a href="#playground" class="sidebar__link" data-section="playground">
+                    <span class="sidebar__icon">🎮</span>
+                    Interactive Playground
+                </a>
+                <a href="#tools" class="sidebar__link" data-section="tools">
+                    <span class="sidebar__icon">🛠️</span>
+                    Tools & Templates
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content">
+            <!-- Overview Section -->
+            <section id="overview" class="section active">
+                <h2>Prompt Engineering in 2025</h2>
+                <p>Welcome to the cutting edge of prompt engineering. As AI models become more sophisticated, prompt engineering has evolved from simple instruction writing to a complex discipline requiring deep understanding of model behavior, structured thinking, and systematic evaluation.</p>
+                
+                <div class="technique-grid">
+                    <div class="technique-card" data-technique="metaprompting">
+                        <h3>🔄 Metaprompting</h3>
+                        <p>Use LLMs to improve prompts through iterative refinement and self-reflection</p>
+                        <button class="btn btn--primary">Learn More</button>
+                    </div>
+                    
+                    <div class="technique-card" data-technique="structured">
+                        <h3>🏗️ Structured Prompting</h3>
+                        <p>Organize prompts with clear roles, tasks, and XML-style formatting</p>
+                        <button class="btn btn--primary">Learn More</button>
+                    </div>
+                    
+                    <div class="technique-card" data-technique="advanced">
+                        <h3>🧠 Advanced Techniques</h3>
+                        <p>Chain of Thought, Few-Shot Learning, and Escape Hatches</p>
+                        <button class="btn btn--primary">Learn More</button>
+                    </div>
+                    
+                    <div class="technique-card" data-technique="evaluation">
+                        <h3>⚖️ Evaluation Systems</h3>
+                        <p>Build robust evaluation frameworks for continuous improvement</p>
+                        <button class="btn btn--primary">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="best-practices">
+                    <h3>Best Practices for 2025</h3>
+                    <ul class="practices-list">
+                        <li>Use clear, specific language to avoid ambiguity</li>
+                        <li>Provide detailed instructions with step-by-step breakdowns</li>
+                        <li>Include relevant context and examples</li>
+                        <li>Implement escape hatches for uncertainty</li>
+                        <li>Use structured formats (XML-style) for complex prompts</li>
+                        <li>Test across multiple models to find optimal fit</li>
+                        <li>Implement evaluation systems with real user feedback</li>
+                        <li>Practice forward deployed engineering for domain expertise</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Metaprompting Section -->
+            <section id="metaprompting" class="section">
+                <h2>Metaprompting Techniques</h2>
+                <p>Metaprompting involves using LLMs to improve prompts through iterative refinement and self-reflection. This technique has become essential for automated prompt optimization.</p>
+                
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="concept">Concept</button>
+                    <button class="tab-button" data-tab="example">Example</button>
+                    <button class="tab-button" data-tab="template">Template</button>
+                </div>
+
+                <div class="tab-content">
+                    <div id="concept" class="tab-panel active">
+                        <h3>Understanding Metaprompting</h3>
+                        <p>Metaprompting leverages the LLM's own understanding of good prompting practices to improve existing prompts. Instead of manually iterating on prompts, you can ask the model to analyze and suggest improvements.</p>
+                        
+                        <div class="benefits-list">
+                            <h4>Key Benefits:</h4>
+                            <ul>
+                                <li><strong>Automated optimization:</strong> Reduce manual iteration time</li>
+                                <li><strong>Better performance discovery:</strong> Find improvements you might miss</li>
+                                <li><strong>Scalable improvement:</strong> Apply to multiple prompts systematically</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="example" class="tab-panel">
+                        <h3>Metaprompting Example</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span>Metaprompt for Improvement</span>
+                                <button class="copy-btn" data-copy="metaprompt-example">📋 Copy</button>
+                            </div>
+                            <pre id="metaprompt-example"><code>You are an expert prompt engineer. Analyze this prompt and suggest 3 specific improvements:
+
+[ORIGINAL PROMPT]
+"Write a summary of this article."
+
+Focus on:
+1. Clarity and specificity
+2. Output formatting requirements
+3. Context and examples
+
+Provide your analysis and improved version.</code></pre>
+                        </div>
+                    </div>
+
+                    <div id="template" class="tab-panel">
+                        <h3>Metaprompt Template</h3>
+                        <div class="template-box">
+                            <h4>Universal Metaprompt Template</h4>
+                            <div class="code-example">
+                                <div class="code-header">
+                                    <span>Template</span>
+                                    <button class="copy-btn" data-copy="metaprompt-template">📋 Copy</button>
+                                </div>
+                                <pre id="metaprompt-template"><code>You are an expert prompt engineer. Analyze the following prompt and suggest improvements:
+
+[ORIGINAL PROMPT]
+
+Please evaluate:
+1. Clarity and specificity
+2. Role definition (if applicable)
+3. Task structure and steps
+4. Output format specification
+5. Context and examples
+6. Potential edge cases
+
+Provide:
+- 3 specific improvement suggestions
+- A revised version of the prompt
+- Explanation of changes made</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Structured Prompting Section -->
+            <section id="structured" class="section">
+                <h2>Structured Prompting</h2>
+                <p>Organized prompts with clear roles, tasks, and XML-style formatting for better LLM comprehension and reliability.</p>
+
+                <div class="prompt-architecture">
+                    <h3>Three-Layer Prompt Architecture</h3>
+                    <div class="architecture-grid">
+                        <div class="architecture-layer">
+                            <h4>System Prompt</h4>
+                            <p>Defines high-level API and core behavior</p>
+                            <div class="code-example">
+                                <pre><code>You are a helpful AI assistant specialized in data analysis. Always provide step-by-step explanations and cite your sources.</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="architecture-layer">
+                            <h4>Developer Prompt</h4>
+                            <p>Customer-specific context and configurations</p>
+                            <div class="code-example">
+                                <pre><code>When working with financial data, always consider regulatory compliance. For this client, prioritize GDPR considerations.</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="architecture-layer">
+                            <h4>User Prompt</h4>
+                            <p>End-user input and specific requests</p>
+                            <div class="code-example">
+                                <pre><code>Generate a quarterly report for our European marketing campaigns</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="xml-example">
+                    <h3>XML-Style Formatting</h3>
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span>Structured Prompt Example</span>
+                            <button class="copy-btn" data-copy="xml-example">📋 Copy</button>
+                        </div>
+                        <pre id="xml-example"><code>&lt;role&gt;You are a customer service manager&lt;/role&gt;
+&lt;task&gt;Approve or reject the following tool call&lt;/task&gt;
+&lt;steps&gt;
+1. Analyze the request thoroughly
+2. Check against company policy
+3. Make decision with reasoning
+4. Provide clear feedback
+&lt;/steps&gt;
+&lt;output_format&gt;
+Decision: [APPROVED/REJECTED]
+Reasoning: [Your reasoning here]
+Feedback: [Additional comments]
+&lt;/output_format&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Techniques Section -->
+            <section id="advanced" class="section">
+                <h2>Advanced Techniques</h2>
+                <p>Sophisticated prompting methods including Chain of Thought, Few-Shot Learning, and Escape Hatches.</p>
+
+                <div class="technique-detail">
+                    <h3>Chain of Thought (CoT)</h3>
+                    <p>Encourage step-by-step reasoning to improve problem-solving accuracy and make the reasoning process transparent.</p>
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span>CoT Example</span>
+                            <button class="copy-btn" data-copy="cot-example">📋 Copy</button>
+                        </div>
+                        <pre id="cot-example"><code>Solve this step by step:
+
+1. Identify what we know
+2. Determine what we need to find
+3. Choose the appropriate method
+4. Work through the solution
+5. Verify the answer
+
+Problem: A store sells 150 items per day. If they increase sales by 20%, how many items will they sell per day?</code></pre>
+                    </div>
+                </div>
+
+                <div class="technique-detail">
+                    <h3>Few-Shot Learning</h3>
+                    <p>Provide examples to guide model behavior and ensure consistent output formatting.</p>
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span>Few-Shot Example</span>
+                            <button class="copy-btn" data-copy="few-shot-example">📋 Copy</button>
+                        </div>
+                        <pre id="few-shot-example"><code>Classify sentiment:
+
+Example 1: "I love this product!" → Positive
+Example 2: "It's okay, nothing special." → Neutral  
+Example 3: "Worst purchase ever." → Negative
+
+Now classify: "Really impressed with the quality!"</code></pre>
+                    </div>
+                </div>
+
+                <div class="technique-detail">
+                    <h3>Escape Hatches</h3>
+                    <p>Provide explicit options for the LLM to decline or request clarification when uncertain.</p>
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span>Escape Hatch Example</span>
+                            <button class="copy-btn" data-copy="escape-example">📋 Copy</button>
+                        </div>
+                        <pre id="escape-example"><code>If you don't have enough information to provide a confident answer, respond with:
+
+"I need more information about [specific missing details] to provide an accurate response."
+
+If the request is outside your capabilities, respond with:
+
+"This request requires [specific capability] which I cannot perform. I recommend [alternative approach]."</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Evaluation Systems Section -->
+            <section id="evaluation" class="section">
+                <h2>Evaluation Systems</h2>
+                <p>Evals are the crown jewels of AI companies - more valuable than prompts themselves. Build robust evaluation frameworks for continuous improvement.</p>
+
+                <div class="evaluation-principles">
+                    <h3>Key Principles</h3>
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <h4>🏢 Domain Expertise Required</h4>
+                            <p>Sit with actual users to understand their workflows and real needs</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>🧪 Real-World Testing</h4>
+                            <p>Use production data and realistic scenarios for evaluation</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>🔄 Continuous Feedback</h4>
+                            <p>Implement loops for ongoing improvement and optimization</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>👤 User-Specific Optimization</h4>
+                            <p>Tailor solutions based on actual user behavior and preferences</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forward-deployed">
+                    <h3>Forward Deployed Engineering</h3>
+                    <p>Send engineers (not salespeople) to work directly with customers, understanding their workflows firsthand and building tailored solutions.</p>
+                    
+                    <div class="deployment-steps">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <h4>Embed with Users</h4>
+                                <p>Engineers work on-site with customers to understand real workflows</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <h4>Build Domain Expertise</h4>
+                                <p>Develop deep understanding of customer's industry and challenges</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <h4>Create Tailored Solutions</h4>
+                                <p>Design prompts and systems specific to customer needs</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">4</span>
+                            <div class="step-content">
+                                <h4>Continuous Iteration</h4>
+                                <p>Refine based on real usage and feedback</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Real-World Cases Section -->
+            <section id="real-world" class="section">
+                <h2>Real-World Applications</h2>
+                <p>Learn from successful implementations at leading AI companies and startups.</p>
+
+                <div class="case-studies">
+                    <div class="case-study">
+                        <h3>🏢 Parahel - Customer Support AI</h3>
+                        <div class="case-details">
+                            <p><strong>Application:</strong> Powers customer support for Perplexity, Replit, and Bolt</p>
+                            <p><strong>Technique:</strong> Structured Prompting with Role Definition</p>
+                            <p><strong>Implementation:</strong> Uses detailed 6-page prompts with clear role definitions and step-by-step workflows</p>
+                            <div class="case-results">
+                                <span class="result-tag">High Accuracy</span>
+                                <span class="result-tag">Consistent Responses</span>
+                                <span class="result-tag">Scalable Solution</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-study">
+                        <h3>🗣️ Giger ML - Voice AI Customer Support</h3>
+                        <div class="case-details">
+                            <p><strong>Application:</strong> Voice-based customer support with low latency</p>
+                            <p><strong>Technique:</strong> Forward Deployed Engineering</p>
+                            <p><strong>Implementation:</strong> Optimized RAG pipeline through on-site prompt refinement</p>
+                            <div class="case-results">
+                                <span class="result-tag">Low Latency</span>
+                                <span class="result-tag">Accurate Responses</span>
+                                <span class="result-tag">Voice Optimized</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-study">
+                        <h3>🚚 Happy Robot - Logistics AI Agents</h3>
+                        <div class="case-details">
+                            <p><strong>Application:</strong> AI agents for logistics brokers</p>
+                            <p><strong>Technique:</strong> Dynamic Prompt Adaptation</p>
+                            <p><strong>Implementation:</strong> Seven-figure contracts using rapid prompt iteration and customer-specific optimization</p>
+                            <div class="case-results">
+                                <span class="result-tag">Seven-Figure Revenue</span>
+                                <span class="result-tag">Rapid Iteration</span>
+                                <span class="result-tag">Customer-Specific</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-personalities">
+                    <h3>Model Personalities & Optimization</h3>
+                    <div class="personality-grid">
+                        <div class="personality-card">
+                            <h4>Claude</h4>
+                            <p class="personality-trait">More human-like and steerable</p>
+                            <p><strong>Best for:</strong> Creative tasks, human-like responses</p>
+                            <p><strong>Tip:</strong> Works well with conversational, empathetic prompts</p>
+                        </div>
+                        <div class="personality-card">
+                            <h4>GPT-4/O1</h4>
+                            <p class="personality-trait">Rigid adherence to instructions</p>
+                            <p><strong>Best for:</strong> Structured tasks, following rubrics</p>
+                            <p><strong>Tip:</strong> Provide detailed, specific instructions</p>
+                        </div>
+                        <div class="personality-card">
+                            <h4>Gemini 2.5 Pro</h4>
+                            <p class="personality-trait">Flexible with good reasoning</p>
+                            <p><strong>Best for:</strong> Exception handling, nuanced interpretation</p>
+                            <p><strong>Tip:</strong> Can handle exceptions to rules</p>
+                        </div>
+                        <div class="personality-card">
+                            <h4>Llama</h4>
+                            <p class="personality-trait">Requires more steering</p>
+                            <p><strong>Best for:</strong> Tasks needing full control</p>
+                            <p><strong>Tip:</strong> Needs detailed prompting and explicit guidance</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Playground Section -->
+            <section id="playground" class="section">
+                <h2>Interactive Playground</h2>
+                <p>Test and refine your prompts with our interactive playground. Experiment with different techniques and see simulated responses.</p>
+
+                <div class="playground-interface">
+                    <div class="playground-controls">
+                        <div class="control-group">
+                            <label for="technique-select" class="form-label">Technique:</label>
+                            <select id="technique-select" class="form-control">
+                                <option value="basic">Basic Prompt</option>
+                                <option value="cot">Chain of Thought</option>
+                                <option value="few-shot">Few-Shot Learning</option>
+                                <option value="structured">Structured Prompting</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label for="model-select" class="form-label">Model Personality:</label>
+                            <select id="model-select" class="form-control">
+                                <option value="claude">Claude (Human-like)</option>
+                                <option value="gpt4">GPT-4 (Rigid)</option>
+                                <option value="gemini">Gemini (Flexible)</option>
+                                <option value="llama">Llama (Steering Required)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="playground-editor">
+                        <div class="editor-section">
+                            <h4>Your Prompt</h4>
+                            <textarea id="prompt-input" class="form-control playground-textarea" placeholder="Enter your prompt here...">Explain the concept of machine learning to a 10-year-old.</textarea>
+                        </div>
+
+                        <div class="editor-section">
+                            <h4>Simulated Response</h4>
+                            <div id="response-output" class="response-box">
+                                <p class="response-placeholder">Click "Generate Response" to see simulated output based on your prompt and selected technique.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="playground-actions">
+                        <button id="generate-response" class="btn btn--primary">Generate Response</button>
+                        <button id="analyze-prompt" class="btn btn--secondary">Analyze Prompt</button>
+                        <button id="improve-prompt" class="btn btn--secondary">Suggest Improvements</button>
+                    </div>
+
+                    <div id="analysis-output" class="analysis-section hidden">
+                        <h4>Prompt Analysis</h4>
+                        <div class="analysis-content"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tools & Templates Section -->
+            <section id="tools" class="section">
+                <h2>Tools & Templates</h2>
+                <p>Ready-to-use templates and tools to accelerate your prompt engineering workflow.</p>
+
+                <div class="tools-grid">
+                    <div class="tool-category">
+                        <h3>Prompt Templates</h3>
+                        <div class="template-list">
+                            <div class="template-item">
+                                <h4>Metaprompt Template</h4>
+                                <p>For improving existing prompts</p>
+                                <button class="btn btn--outline template-btn" data-template="metaprompt">Use Template</button>
+                            </div>
+                            <div class="template-item">
+                                <h4>Structured Analysis Template</h4>
+                                <p>For complex analytical tasks</p>
+                                <button class="btn btn--outline template-btn" data-template="structured">Use Template</button>
+                            </div>
+                            <div class="template-item">
+                                <h4>Few-Shot Classification Template</h4>
+                                <p>For classification tasks</p>
+                                <button class="btn btn--outline template-btn" data-template="few-shot">Use Template</button>
+                            </div>
+                            <div class="template-item">
+                                <h4>Chain of Thought Template</h4>
+                                <p>For step-by-step reasoning</p>
+                                <button class="btn btn--outline template-btn" data-template="cot">Use Template</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tool-category">
+                        <h3>Quality Checklist</h3>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="clarity" class="checklist-checkbox">
+                                <label for="clarity">Clear and specific instructions</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="context" class="checklist-checkbox">
+                                <label for="context">Sufficient context provided</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="examples" class="checklist-checkbox">
+                                <label for="examples">Relevant examples included</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="format" class="checklist-checkbox">
+                                <label for="format">Output format specified</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="escape" class="checklist-checkbox">
+                                <label for="escape">Escape hatches implemented</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="structure" class="checklist-checkbox">
+                                <label for="structure">Structured format used</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tool-category">
+                        <h3>Resources</h3>
+                        <div class="resource-list">
+                            <a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank" class="resource-link">OpenAI Prompt Engineering Guide</a>
+                            <a href="https://docs.anthropic.com/claude/docs/prompt-engineering" target="_blank" class="resource-link">Anthropic Claude Prompting Guide</a>
+                            <a href="https://ai.google.dev/docs/prompting_intro" target="_blank" class="resource-link">Google AI Prompting Guide</a>
+                            <a href="https://llama.meta.com/docs/how-to-guides/prompting/" target="_blank" class="resource-link">Llama Prompting Guide</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>The Prompt Laboratory</h4>
+                    <p>Advancing the art and science of prompt engineering</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Resources</h4>
+                    <ul class="footer__links">
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#playground">Playground</a></li>
+                        <li><a href="#tools">Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Community</h4>
+                    <ul class="footer__links">
+                        <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                        <li><a href="https://discord.com" target="_blank">Discord</a></li>
+                        <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 The Prompt Laboratory. Advancing AI through better prompting.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
