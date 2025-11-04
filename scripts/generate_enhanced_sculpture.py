@@ -20,6 +20,7 @@ Example usage:
 
 import argparse
 import datetime
+import hashlib
 import math
 import os
 import subprocess
@@ -341,7 +342,8 @@ def build_chaotic_sculpture(commits: List[CommitData], patterns: Dict) -> trimes
 
     for i, commit in enumerate(commits):
         # Pseudo-random but deterministic position based on commit data
-        seed = hash(commit.sha) % 10000
+        stable_hash = hashlib.sha256(commit.sha.encode("utf-8")).digest()
+        seed = int.from_bytes(stable_hash[:4], "big")
         np.random.seed(seed)
 
         if i == 0:
@@ -373,10 +375,9 @@ def build_chaotic_sculpture(commits: List[CommitData], patterns: Dict) -> trimes
 
         shape.apply_translation(pos)
 
-        # Chaotic coloring
-        r = (hash(commit.sha + "r") % 156) + 100
-        g = (hash(commit.sha + "g") % 156) + 100
-        b = (hash(commit.sha + "b") % 156) + 100
+        # Chaotic coloring derived from a stable hash so outputs remain reproducible
+        color_hash = hashlib.sha256(f"{commit.sha}:color".encode("utf-8")).digest()
+        r, g, b = [(component % 156) + 100 for component in color_hash[:3]]
         shape.visual.vertex_colors = [r, g, b, 255]
 
         meshes.append(shape)
