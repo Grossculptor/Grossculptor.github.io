@@ -347,6 +347,7 @@
     const modeButtons = document.querySelectorAll('.mode-btn');
     const modeDescription = document.getElementById('mode-description');
     const currentModeDisplay = document.getElementById('current-mode');
+    const defaultLoadingMarkup = loading.innerHTML;
 
     const modeDescriptions = {
       organic: 'Branch-like structures revealing collaboration patterns between human and automated commits.',
@@ -362,28 +363,83 @@
       chaotic: 'Chaotic'
     };
 
+    let currentMode = null;
+
+    function loadModel(url, timeoutMs = 8000) {
+      if (viewer.getAttribute('src') === url && (viewer.modelIsVisible || !('modelIsVisible' in viewer))) {
+        const completion = viewer.updateComplete ?? Promise.resolve();
+        return Promise.resolve(completion).then(() => true);
+      }
+
+      return new Promise((resolve, reject) => {
+        let settled = false;
+
+        const cleanup = () => {
+          viewer.removeEventListener('load', onLoad);
+          viewer.removeEventListener('error', onError);
+          clearTimeout(timeoutId);
+        };
+
+        const finish = (handler, value) => {
+          if (settled) return;
+          settled = true;
+          cleanup();
+          handler(value);
+        };
+
+        const onLoad = () => finish(resolve, true);
+        const onError = event => finish(reject, event?.detail ?? new Error(`Failed to load model: ${url}`));
+
+        const timeoutId = setTimeout(() => {
+          finish(reject, new Error(`Timed out while loading model: ${url}`));
+        }, timeoutMs);
+
+        viewer.addEventListener('load', onLoad, { once: true });
+        viewer.addEventListener('error', onError, { once: true });
+        viewer.setAttribute('src', url);
+      }).then(async result => {
+        if (viewer.updateComplete) {
+          try {
+            await viewer.updateComplete;
+          } catch (err) {
+            console.warn(err);
+          }
+        }
+        return result;
+      });
+    }
+
     async function loadSculpture(mode) {
+      if (mode === currentMode) {
+        return;
+      }
+
+      loading.innerHTML = defaultLoadingMarkup;
       loading.style.display = 'block';
       viewer.style.display = 'none';
 
-      const url = `models/commit_sculpture_${mode}.glb`;
-
+      const primaryUrl = `models/commit_sculpture_${mode}.glb`;
+      const fallbackUrl = 'models/commit_sculpture.glb';
+      let fallbackUsed = false;
       try {
-        const response = await fetch(url, { method: 'HEAD' });
-        if (response.ok) {
-          viewer.src = url;
-          await new Promise(resolve => {
-            viewer.addEventListener('load', resolve, { once: true });
-          });
-        } else {
-          // Fallback to original if mode doesn't exist yet
-          viewer.src = 'models/commit_sculpture.glb';
+        await loadModel(primaryUrl, 8000);
+      } catch (primaryError) {
+        console.warn(primaryError);
+        try {
+          await loadModel(fallbackUrl, 8000);
+          fallbackUsed = true;
+        } catch (fallbackError) {
+          console.error(fallbackError);
+          loading.innerHTML = '<p>Unable to load sculpture data. Please try again later.</p>';
+          return;
         }
-      } catch (err) {
-        // Fallback on error
-        viewer.src = 'models/commit_sculpture.glb';
       }
 
+      if (fallbackUsed) {
+        console.warn('Primary sculpture model unavailable, displaying default sculpture.');
+      }
+
+      currentMode = mode;
       loading.style.display = 'none';
       viewer.style.display = 'block';
 
