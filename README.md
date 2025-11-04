@@ -46,23 +46,46 @@ He has been developing [**#DATAsculpting**](https://open.substack.com/pub/mlearn
 
 ## Generative Commit Sculpture
 
-This repository includes an experimental script that turns commit history into a
-3D model. The latest build can be viewed in the repository’s [index page](./commit_sculpture.html).
-Run `scripts/generate_commit_sculpture.py` to create `models/commit_sculpture.glb`.
-Install the Python dependencies with:
+This repository includes an experimental sculpture system that transforms commit history into
+multi-dimensional 3D artworks revealing emergent patterns in development activity.
 
+### Basic Sculpture
+View the [basic temporal sculpture](./commit_sculpture.html) showing commit frequency over time.
+
+### Enhanced Multi-Dimensional Sculptures
+**[View Enhanced Sculptures](./commit_sculpture_enhanced.html)** — Four aesthetic modes revealing:
+- **Organic**: Branch-like growth patterns showing human vs automation collaboration
+- **Crystalline**: Geometric formations exposing code structure and impact magnitude
+- **Rhythmic**: 24-hour wave patterns revealing temporal development rhythms
+- **Chaotic**: Emergent complexity from change magnitude and commit properties
+
+Each mode visualizes 7+ data dimensions: author type, temporal patterns, file changes,
+impact magnitude, commit bursts, collaboration networks, and hour-of-day rhythms.
+
+### Generate Your Own
+
+Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-To experiment with different histories you can populate the repository with
-random commits using `scripts/commit_randomizer.py`:
+Generate enhanced sculptures:
+```bash
+# Organic mode (branch structures)
+python scripts/generate_enhanced_sculpture.py --repo-path . --days 200 --mode organic --output models/sculpture.glb
 
+# Or try: crystalline, rhythmic, chaotic
+```
+
+Generate basic sculpture:
+```bash
+python scripts/generate_commit_sculpture.py --owner USER --repo REPO --days 30
+```
+
+Experiment with random commit histories:
 ```bash
 python scripts/commit_randomizer.py --repo-path . --count 10
 ```
-
-Integrate it with GitHub Actions to keep the sculpture updated.
 
 ---
 

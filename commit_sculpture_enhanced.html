@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Generative Commit Sculpture - DATAsculptor</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      color: #e0e0e0;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #888;
+      margin-bottom: 2rem;
+    }
+
+    .viewer-section {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 600px;
+      background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0a 100%);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .control-group {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .control-group h3 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #667eea;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .mode-buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+
+    .mode-btn {
+      padding: 0.75rem 1rem;
+      background: rgba(102, 126, 234, 0.1);
+      border: 2px solid rgba(102, 126, 234, 0.3);
+      color: #667eea;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .mode-btn:hover {
+      background: rgba(102, 126, 234, 0.2);
+      border-color: rgba(102, 126, 234, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .mode-btn.active {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-color: #667eea;
+      color: white;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .info-card {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+    }
+
+    .info-card h3 {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .info-card .value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #667eea;
+    }
+
+    .info-card .description {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+
+    .about-section {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .about-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #667eea;
+    }
+
+    .about-section p {
+      line-height: 1.8;
+      color: #aaa;
+      margin-bottom: 1rem;
+    }
+
+    .mode-descriptions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .mode-desc {
+      background: rgba(102, 126, 234, 0.05);
+      padding: 1rem;
+      border-radius: 6px;
+      border-left: 3px solid #667eea;
+    }
+
+    .mode-desc h4 {
+      color: #667eea;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .mode-desc p {
+      font-size: 0.9rem;
+      color: #888;
+      margin: 0;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(102, 126, 234, 0.1);
+      border-top-color: #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    a {
+      color: #667eea;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #764ba2;
+    }
+
+    .github-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: rgba(102, 126, 234, 0.1);
+      border: 2px solid rgba(102, 126, 234, 0.3);
+      border-radius: 6px;
+      color: #667eea;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .github-link:hover {
+      background: rgba(102, 126, 234, 0.2);
+      border-color: rgba(102, 126, 234, 0.6);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Enhanced Generative Commit Sculpture</h1>
+    <p class="subtitle">Multi-dimensional visualization of repository evolution and emergent development patterns</p>
+
+    <div class="viewer-section">
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Loading sculpture...</p>
+      </div>
+      <model-viewer id="viewer"
+        style="display: none;"
+        auto-rotate
+        camera-controls
+        shadow-intensity="1"
+        exposure="0.8"
+        environment-image="neutral">
+      </model-viewer>
+
+      <div class="controls">
+        <div class="control-group">
+          <h3>Aesthetic Mode</h3>
+          <div class="mode-buttons">
+            <button class="mode-btn active" data-mode="organic">Organic</button>
+            <button class="mode-btn" data-mode="crystalline">Crystalline</button>
+            <button class="mode-btn" data-mode="rhythmic">Rhythmic</button>
+            <button class="mode-btn" data-mode="chaotic">Chaotic</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <h3>Current Mode</h3>
+          <p id="mode-description" style="color: #aaa; font-size: 0.9rem; line-height: 1.6;">
+            Branch-like structures revealing collaboration patterns between human and automated commits.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Visualization Type</h3>
+        <div class="value" id="current-mode">Organic</div>
+        <p class="description">Current aesthetic mode showing commit patterns</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Data Dimensions</h3>
+        <div class="value">7+</div>
+        <p class="description">Author type, time patterns, file changes, impact magnitude, bursts, collaboration, temporal rhythms</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Emergent Patterns</h3>
+        <div class="value">Detected</div>
+        <p class="description">Commit bursts, hour-of-day clustering, human-bot collaboration networks</p>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <h2>About This Sculpture</h2>
+      <p>
+        This sculpture transforms the commit history of <strong>Grossculptor/Grossculptor.github.io</strong>
+        into a multi-dimensional 3D form. Unlike traditional commit visualizations that only show temporal
+        frequency, this enhanced sculpture reveals:
+      </p>
+
+      <div class="mode-descriptions">
+        <div class="mode-desc">
+          <h4>🌿 Organic Mode</h4>
+          <p>Branch-like growth patterns showing human vs automated commits, with connections revealing development flow and hour-of-day spiraling patterns.</p>
+        </div>
+
+        <div class="mode-desc">
+          <h4>💎 Crystalline Mode</h4>
+          <p>Geometric crystal formations where each spike represents a commit. Radial position based on time-of-day, height from sequence, sharpness from impact magnitude.</p>
+        </div>
+
+        <div class="mode-desc">
+          <h4>🌊 Rhythmic Mode</h4>
+          <p>Circular wave pattern showing 24-hour activity distribution. Height represents commit intensity, revealing temporal development rhythms.</p>
+        </div>
+
+        <div class="mode-desc">
+          <h4>⚡ Chaotic Mode</h4>
+          <p>Emergent complexity from change magnitude. Pseudo-random but deterministic growth where position, form, and color derive from commit properties.</p>
+        </div>
+      </div>
+
+      <p style="margin-top: 1.5rem;">
+        The sculpture reveals <strong>unexpected correlations</strong>: automation patterns following human commits,
+        burst activity windows, collaboration network topology, and the "pulse" of development across different hours.
+      </p>
+
+      <a href="https://github.com/Grossculptor/Grossculptor.github.io" class="github-link" target="_blank">
+        <span>View Source Repository</span>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const viewer = document.getElementById('viewer');
+    const loading = document.getElementById('loading');
+    const modeButtons = document.querySelectorAll('.mode-btn');
+    const modeDescription = document.getElementById('mode-description');
+    const currentModeDisplay = document.getElementById('current-mode');
+
+    const modeDescriptions = {
+      organic: 'Branch-like structures revealing collaboration patterns between human and automated commits.',
+      crystalline: 'Geometric crystal spikes radiating from center, positioned by time-of-day with impact-driven sharpness.',
+      rhythmic: 'Circular wave showing 24-hour activity rhythm with height representing commit intensity.',
+      chaotic: 'Emergent complexity where form grows pseudo-randomly based on commit data properties.'
+    };
+
+    const modeNames = {
+      organic: 'Organic',
+      crystalline: 'Crystalline',
+      rhythmic: 'Rhythmic',
+      chaotic: 'Chaotic'
+    };
+
+    async function loadSculpture(mode) {
+      loading.style.display = 'block';
+      viewer.style.display = 'none';
+
+      const url = `models/commit_sculpture_${mode}.glb`;
+
+      try {
+        const response = await fetch(url, { method: 'HEAD' });
+        if (response.ok) {
+          viewer.src = url;
+          await new Promise(resolve => {
+            viewer.addEventListener('load', resolve, { once: true });
+          });
+        } else {
+          // Fallback to original if mode doesn't exist yet
+          viewer.src = 'models/commit_sculpture.glb';
+        }
+      } catch (err) {
+        // Fallback on error
+        viewer.src = 'models/commit_sculpture.glb';
+      }
+
+      loading.style.display = 'none';
+      viewer.style.display = 'block';
+
+      modeDescription.textContent = modeDescriptions[mode];
+      currentModeDisplay.textContent = modeNames[mode];
+    }
+
+    modeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.dataset.mode;
+
+        modeButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        loadSculpture(mode);
+      });
+    });
+
+    // Load initial sculpture
+    loadSculpture('organic');
+  </script>
+</body>
+</html>
